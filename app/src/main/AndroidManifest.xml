@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+
+    <!-- Declare hardware feature -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/img_1"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Rakshika"
+        tools:targetApi="31"
+        android:networkSecurityConfig="@xml/network_security_config"
+    >
+
+        <!-- Meta-data for Google API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="5b3ce3597851110001cf624803ef98d8bc9b4635bb02d9f8e13f46a0" />
+
+        <!-- Activity declarations -->
+        <activity
+            android:name=".Splash_screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".FakeCallActivity" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".EmergencyActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".PersonalDetails"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.Rakshika.NoActionBar" />
+
+        <activity android:name=".SignUp" android:exported="false" />
+
+        <activity android:name=".Crime_Zone" />
+
+        <!-- Receiver declarations -->
+        <receiver
+            android:name=".SOSBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="SMS_SENT"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".SMSBroadcastReceiver"
+            android:exported="false"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="SMS_SENT" />
+            </intent-filter>
+        </receiver>
+
+
+
+        <!--        <receiver android:name=".smsSentReceiver" android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="SMS_SENT"/>-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+
+
+
+        <!-- Additional activity declarations -->
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".Fragment1" android:exported="false" />
+        <activity android:name=".Fragment2" android:exported="false" />
+        <activity android:name=".Fragment3" android:exported="false" />
+
+    </application>
+
+</manifest>

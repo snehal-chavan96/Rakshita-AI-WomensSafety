@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/holo_red_light"
+        android:padding="16dp"
+        android:text="Call Emergency Contact"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnShareLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/holo_blue_light"
+        android:padding="16dp"
+        android:text="Share My Location"
+        android:textColor="@android:color/white" />
+0.
+
+</LinearLayout>

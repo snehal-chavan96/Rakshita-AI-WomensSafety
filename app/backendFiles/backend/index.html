@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safer Route Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+        <h1 class="text-xl font-bold text-center mb-4">Safer Route Finder</h1>
+        <input id="origin" type="text" placeholder="Enter origin" class="w-full p-2 mb-2 border rounded">
+        <input id="destination" type="text" placeholder="Enter destination" class="w-full p-2 mb-2 border rounded">
+        <button id="findRoute" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Find Route</button>
+    </div>
+    
+    <div id="map" class="w-full h-96 mt-4 border rounded"></div>
+
+    <script>
+        let map = L.map('map').setView([20.5937, 78.9629], 5); // Default India Center
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        document.getElementById('findRoute').addEventListener('click', async () => {
+            let origin = document.getElementById('origin').value;
+            let destination = document.getElementById('destination').value;
+            
+            if (!origin || !destination) {
+                alert("Please enter both origin and destination!");
+                return;
+            }
+
+            try {
+                let response = await fetch('http://127.0.0.1:5000/safer-route', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ origin, destination })
+                });
+
+                let data = await response.json();
+                if (data.error) throw new Error(data.error);
+
+                map.eachLayer((layer) => {
+                    if (!!layer.toGeoJSON) map.removeLayer(layer);
+                });
+
+                // Clear previous route layers
+                map.eachLayer((layer) => {
+                    if (!!layer.toGeoJSON && layer !== map._layers[Object.keys(map._layers)[0]]) {
+                        map.removeLayer(layer);
+                    }
+                });
+
+                // Plot colored route segments
+                data.segments.forEach(({ segment, color }) => {
+                    const latlngs = segment.map(coord => [coord[1], coord[0]]);
+                    L.polyline(latlngs, { color, weight: 6 }).addTo(map);
+                });
+
+                // Fit map to the first segment (or all segments together if you want)
+                if (data.segments.length > 0) {
+                    const allLatlngs = data.segments.flatMap(({ segment }) =>
+                        segment.map(coord => [coord[1], coord[0]])
+                    );
+                    map.fitBounds(L.polyline(allLatlngs).getBounds());
+                }
+
+
+                map.fitBounds(L.polyline(data.routes[0].route.geometry.coordinates.map(coord => [coord[1], coord[0]])).getBounds());
+            } catch (error) {
+                alert("Error fetching route: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

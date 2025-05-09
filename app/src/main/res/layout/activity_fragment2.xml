@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewOverview2"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:src="@drawable/overview_image1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/light_blue"
+        android:text="Rakshita recommends the safest routes based on real-time data, crime trends, and traffic conditions, ensuring you reach your destination securely."
+        />
+    <!-- Horizontal LinearLayout for the arrows -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="10dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_arrow" />
+
+        <ImageButton
+            android:id="@+id/front"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/front_arrow" />
+    </LinearLayout>
+
+    <!-- Add more ImageViews as needed -->
+
+</LinearLayout>

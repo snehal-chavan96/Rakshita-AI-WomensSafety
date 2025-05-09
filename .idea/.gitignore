@@ -1,0 +1,52 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Android Studio
+.idea/
+*.iml
+
+# Built files
+/build/
+*/build/
+
+# Local configuration
+local.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gradle
+.gradle/
+**/build/
+**/out/
+!gradle-wrapper.jar
+
+# Logs
+*.log
+
+# Keystore files
+*.jks
+*.keystore
+
+# NDK
+obj/
+
+# Google Services
+google-services.json
+
+# Ignore Python cache and compiled files in backend
+backendFiles/backend/__pycache__/
+backendFiles/backend/*.py[cod]
+backendFiles/backend/*.pyo
+backendFiles/backend/*.pyd
+
+# Ignore Flask instance folder
+backendFiles/backend/instance/
+
+# Ignore Python virtual environment
+backendFiles/backend/venv/
+
+# Ignore environment file and DB files
+backendFiles/backend/.env
+backendFiles/backend/*.db

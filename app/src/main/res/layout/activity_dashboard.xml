@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".Dashboard"
+    android:gravity="top|center_horizontal">
+
+    <!-- App Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/img_1" />
+
+    <!-- Horizontal Layout for Personal Details and Logout Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <!-- Personal Details Button -->
+        <Button
+            android:id="@+id/PersonalDetails_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/light_blue"
+            android:text="Personal Details" />
+
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/Logout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:backgroundTint="@color/light_blue"
+            android:text="Logout" />
+    </LinearLayout>
+
+    <!-- Nested Layouts for Functional Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- First Row -->
+        <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/sos_btn"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/purple"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sos" />
+
+            <ImageButton
+                android:id="@+id/SafeRoute_btn"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:backgroundTint="@color/purple"
+                android:scaleType="fitCenter"
+                android:src="@drawable/safe_route" />
+        </LinearLayout>
+
+        <!-- Second Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/CrimeZone_btn"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/purple"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/alert" />
+
+            <ImageButton
+                android:id="@+id/FakeCall_btn"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:src="@drawable/fakecall" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
