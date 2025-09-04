@@ -1,7 +1,17 @@
-Rakshita - AI-Driven Women's Safety App | Predicts crime zones, suggests safer routes, and provides emergency assistance using AI/ML.
+# Rakshita – AI-Driven Women's Safety App  
 
-🛡️ About Rakshita Rakshita is an AI-driven women's safety app that helps users stay safe by predicting crime zones, suggesting safer routes, and providing emergency assistance.
+Rakshita is an AI-powered mobile application designed to enhance women’s safety by providing intelligent insights and real-time support. The app predicts crime-prone zones, recommends safer routes, and offers emergency assistance features to help users feel secure in their daily journeys.  
 
-🚀 Features ✔️ Real-time Crime Zone Prediction – Uses AI/ML to analyze and predict high-risk areas. ✔️ Safe Route Recommendation – Provides safer alternative routes. ✔️ Live Location Sharing – Enables users to share their location with trusted contacts. ✔️ Emergency Alerts – Quick SOS button for instant help. ✔️ Community Feedback – Users can report incidents and rate safety of locations.
+## About the Project  
+Women’s safety is a critical concern, and Rakshita addresses it with a technology-driven approach. By leveraging AI/ML models, the app analyzes crime data to highlight potentially unsafe areas and guide users with safer alternatives. It also empowers users to act quickly in emergencies through SOS alerts and live location sharing.  
 
-🛠️ Tech Stack 🔹 Backend: Flask (Python) with PostgreSQL 🔹 Frontend: Android (Java) 🔹 Database: PostgreSQL 🔹 AI/ML: Python (for predictive analysis)
+## Key Features  
+- **Real-time Crime Zone Prediction:** Uses AI/ML models to identify and highlight high-risk areas.  
+- **Safe Route Recommendations:** Suggests safer alternatives to help users avoid dangerous locations.  
+- **Live Location Sharing:** Allows users to share their real-time location with trusted contacts.  
+- **Emergency Alerts (SOS):** Provides instant alerts and assistance during emergencies.  
+- **Community Feedback:** Enables users to report incidents and rate the safety of locations, building a collaborative safety network.  
+
+## Impact  
+Rakshita combines AI-powered insights with community participation to create a reliable safety companion for women. By integrating predictive analytics, real-time tracking, and emergency response, the app empowers users with the tools they need to make safer decisions and seek timely help.  
+
